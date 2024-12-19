@@ -1,0 +1,47 @@
+const mongoose = require("mongoose");
+
+const campaignSchema = new mongoose.Schema({
+  id: { type: String },
+  product: { type: String },
+  campaign_name: { type: String },
+  attachment: { type: String, default: "" },
+  industry: { type: String},
+  hash_tag: { type: String},
+  country: { type: String, default: "" },
+  state: { type: String, default: "" },
+  city: { type: String, default: "" },
+  age: { type: String },
+  till_age: { type: String },
+  gender: { type: String }, 
+  remark: { type: String },
+  platforms: { type: String },
+  platform_link: { type: String },
+  language: { type: String },
+  profile_tag: { type: String, default: "" },
+  to_do: { type: String, default: "" },
+  not_todo: { type: String, default: "" },
+  client_id: { type: String },
+  content_type: { type: String, default: "2" },
+  created_date: { type: Date },
+  campaign_no: { type: String },
+  availability: { type: String, default: 0 },
+  approval: { type: String, default: "1" }, 
+  created_by: { type: String, default: "" }, 
+  compaction: { type: Date, default: null },
+  approval_rejection_date: { type: Date, default: null },
+  status: { type: String, default: "" },
+  dead_line: { type: Date },
+  price: { type: String, default: 0 },
+  job_type: { type: String, default: "" },
+  campaign_type: { type: String, default: "" },
+  product_price: { type: String, default: 0 },
+  is_screen_shots_required: { type: String, default: false },
+  area: { type: String, default: "" },
+  banner: { type: String, default: "" },
+  influ_working_day: { type: Number },
+  reward_days: { type: Number },
+});
+
+
+const Campaign = mongoose.model('make_campaigns', campaignSchema);
+module.exports = Campaign;
