@@ -120,7 +120,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server and listen on the port specified in environment variables
-const port = 5001;
+const port = 5006;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
