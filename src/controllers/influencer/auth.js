@@ -1,7 +1,7 @@
 const Trycatch = require("../../middleware/trycatch.js");
 const User = require('../../models/influencerModel.js');
 const Mailer = require("../../utils/sendEmailVerificationOTP.js");
-const { generateOTP, sendOTP, verifyOTP } = require("../../utils/otp");
+const { generateOTP, sendOTP, verifyOTP } = require("../../utils/otp.js");
 const {handleError} = require("../../utils/errorHandel.js");
 
 // otp verification

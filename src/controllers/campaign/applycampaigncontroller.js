@@ -1,11 +1,11 @@
 // const Campaign = require("../../../model/brand/campaign/campaign");
 // const Trycatch = require("../../middleware/Trycatch");
-const ApplyInCampaign = require("../../models/campaign/ApplyInCampaign");
-const User = require("../../models/influencerModel");
+const ApplyInCampaign = require("../../models/campaign/ApplyInCampaign.js");
+const User = require("../../models/influencerModel.js");
 const Campaign = require("../../models/campaignModel.js");
 const InfluencerSocialMedia = require("../../models/influencersocailMedia.js");
 // mails
-const sendPaymentNotification = require("../../utils/emails/payment/paymentemail");
+const sendPaymentNotification = require("../../utils/emails/payment/paymentemail.js");
 const sendPaymentScheduleEmail = require("../../utils/emails/payment/trangectionemail.js");
 
 const formatDate = (date) => {
@@ -187,7 +187,8 @@ const EditApplyCampaign = async (req, res, next) => {
     const campaignPrice = parseFloat(campaign.price);
     const currentDate = new Date(); 
     
-    const { content, post_link, productRs, infAmount, reward, total } = req.body;
+    const { content, post_link, productRs, infAmount, rewards, total } = req.body;
+    console.log("rewards",rewards);
     let updateFields = req.body;
 
     if (content) { 
@@ -217,7 +218,7 @@ const EditApplyCampaign = async (req, res, next) => {
         // User is eligible for 10% reward
         const rewardAmount = (campaignPrice * 0.10);  
         updateFields = {
-          ...updateFields,
+          ...updateFields, 
           rewards: rewardAmount,  
         };
       }
@@ -239,10 +240,10 @@ const EditApplyCampaign = async (req, res, next) => {
       };
     }
 
-    if (reward) {
+    if (rewards) {
       updateFields = {
         ...updateFields,
-        rewards: reward,
+        rewards: rewards,
       };
     }
 

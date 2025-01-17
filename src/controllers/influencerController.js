@@ -2,10 +2,10 @@ const Influencer = require("../models/influencerModel.js");
 const InfluencerSocialMedia = require("../models/influencersocailMedia.js");
 const Trycatch = require("../middleware/trycatch.js");
 const ApiFeatures = require("../utils/apifeature.js");
-const ApplyInCampaign = require("../models/campaign/ApplyInCampaign");
+const ApplyInCampaign = require("../models/campaign/ApplyInCampaign.js");
 const Campaign = require("../models/campaignModel.js");
-const BankDetails   = require("../models/influ/infulbankdetails");
-const Identity = require("../models/influ/influidentity");
+const BankDetails   = require("../models/influ/infulbankdetails.js");
+const Identity = require("../models/influ/influidentity.js");
 
 // register influencer
 const registerInfluencer = Trycatch(async (req, res, next) => {

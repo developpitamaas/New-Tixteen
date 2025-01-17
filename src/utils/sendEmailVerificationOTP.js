@@ -10,13 +10,16 @@ const sendEmail = async (email, subject, message, isHTML = false) => {
     port: 587,
     secure: false,
     auth: {
-      user: "contactme@tixteen.com",
-      pass: "mpsj biyb kfru norr",
-      // tixteen app
+      // user: "contactme@tixteen.com",
+      // pass: "mpsj biyb kfru norr",
+      // tixteen app  
       // user: "tixteenapp@gmail.com",
       // pass: "juaf fexj ghqk cejx",
+      user: "tixteenapp@gmail.com",
+      pass: "dvte miju lapf hzld",
       // user: "tixteenapp@gmail.com",
       // pass: "tixteen@app1423",
+
     },
   });
 

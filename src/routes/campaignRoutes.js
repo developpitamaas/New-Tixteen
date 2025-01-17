@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const campaignController = require('../controllers/campaignController.js');
-const ApplyCampaign = require('../controllers/campaign/applycampaigncontroller');
+const ApplyCampaign = require('../controllers/campaign/applycampaigncontroller.js');
 const CampignFollow = require('../controllers/campaign/followerrequiredcontroller.js');
 // const DeliverableData  = require('../controllers/campaignDeliverableController.js');
 const FollowerRequired = require('../controllers/followerRequiredCampaignController.js');

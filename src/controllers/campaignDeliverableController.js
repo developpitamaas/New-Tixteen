@@ -1,7 +1,7 @@
 // controllers/campaignDeliverableController.js
 
 const CampaignDeliverable = require('../models/campaignDeliverableModel.js');
-const Trycatch = require('../middleware/trycatch');
+const Trycatch = require('../middleware/trycatch.js');
 
 
 const createDeliverable = Trycatch(async (req, res) => {

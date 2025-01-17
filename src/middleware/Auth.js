@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const TryCatch = require("./trycatch.js");
 // const User = require("../models/staff/addstaf.js");
 const User = require("../models/staff/login.js");
-const Inful = require("../models/influencerModel");
+const Inful = require("../models/influencerModel.js");
 
 // using cookies for authentication
 // const IsAuthenticateUser = TryCatch(async (req, res, next) => {

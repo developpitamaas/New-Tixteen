@@ -1,6 +1,6 @@
 
 
-const sendWhatsAppMessage = require("../../utils/whatapp/wamessage");
+const sendWhatsAppMessage = require("../../utils/whatapp/wamessage.js");
 const RequiredFollower = require("../../models/campaign/requiredFollower.js");
 
 

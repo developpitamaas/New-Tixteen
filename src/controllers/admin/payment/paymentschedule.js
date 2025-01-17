@@ -1,5 +1,5 @@
-const ApplyInCampaign = require("../../../models/campaign/ApplyInCampaign");
-const Campaign = require("../../../models/campaignModel"); // Assuming Campaign model is required
+const ApplyInCampaign = require("../../../models/campaign/ApplyInCampaign.js");
+const Campaign = require("../../../models/campaignModel.js"); // Assuming Campaign model is required
 const Influencer = require("../../../models/influencerModel.js");
 
 

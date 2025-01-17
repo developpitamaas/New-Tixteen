@@ -35,7 +35,6 @@ async function sendPaymentScheduleEmail({ payscdlamount,
 
   const amount = payscdlamount + productprice;
 
-  // HTML content for the email
   const tableHtml = `
     <table style="width: 100%;">
       <tr></tr>

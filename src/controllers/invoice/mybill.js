@@ -1,5 +1,5 @@
-const MYBILL = require("../../models/invoice/mybill");
-const BillItem = require("../../models/invoice/billitem");
+const MYBILL = require("../../models/invoice/mybill.js");
+const BillItem = require("../../models/invoice/billitem.js");
 const Trycatch = require("../../middleware/trycatch.js");
 
 const getMyBill = Trycatch(async (req, res) => {
