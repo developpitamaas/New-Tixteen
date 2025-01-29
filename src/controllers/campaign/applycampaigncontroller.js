@@ -4,6 +4,7 @@ const ApplyInCampaign = require("../../models/campaign/ApplyInCampaign.js");
 const User = require("../../models/influencerModel.js");
 const Campaign = require("../../models/campaignModel.js");
 const InfluencerSocialMedia = require("../../models/influencersocailMedia.js");
+const InfluencerBankDetails = require("../../models/influ/infulbankdetails.js");
 // mails
 const sendPaymentNotification = require("../../utils/emails/payment/paymentemail.js");
 const sendPaymentScheduleEmail = require("../../utils/emails/payment/trangectionemail.js");
@@ -280,7 +281,11 @@ const EditApplyCampaign = async (req, res, next) => {
     const campaignDetails = await Campaign.findOne({
       campaign_no: apply.campaign_no,
     });
-
+       // find Influencerbankdetails
+       const Influencerbankdetailsdata = await InfluencerBankDetails.findOne({
+        influe_id: apply.influ_id,
+      }); 
+ 
     const payscdlemail = UserDetails.email;
     const curpaydate = new Date().toISOString();
     const payscdlinflulevel = UserDetails.level || "";
@@ -291,6 +296,7 @@ const EditApplyCampaign = async (req, res, next) => {
     const payscdlcontent = apply.content || "";
     const transactionid = apply.transaction_id || "";
     const payscdlamount = Number(apply.amount) || 0;
+    const payrewards = Number(apply.rewards) || 0;
     const productprice = Number(campaignDetails.product_price) || 0;
 
     // Send notification when payment is scheduled
@@ -311,11 +317,11 @@ const EditApplyCampaign = async (req, res, next) => {
         payscdlcampaignname,
         payscdlproduct,
         payscdlcontent,
+        payrewards,
         maindate: apply.opt_date,
-        payscdlaccholder: "test place holder",
-        payscdlbankname: "test bank",
-        payscdlaccnum: "test acc number",
-        payscdlifsc: "test ifsc",
+        payscdlbankname: Influencerbankdetailsdata.bankname || "",
+        payscdlaccnum: Influencerbankdetailsdata.accountnumber || "",
+        payscdlifsc: Influencerbankdetailsdata.ifsccode || "",
       });
     }
 

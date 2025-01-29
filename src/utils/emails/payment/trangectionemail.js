@@ -11,6 +11,7 @@ async function sendPaymentScheduleEmail({ payscdlamount,
   payscdlcampaignname,
   payscdlproduct,
   payscdlcontent,
+  payrewards,
   maindate,
   payscdlaccholder,
   payscdlbankname,
@@ -30,10 +31,11 @@ async function sendPaymentScheduleEmail({ payscdlamount,
   //   payscdlaccholder,
   //   payscdlbankname,
   //   payscdlaccnum,
-  //   payscdlifsc
+  //   payscdlifsc 
   // } = paymentDetails;
 
-  const amount = payscdlamount + productprice;
+  const amount = payscdlamount + payrewards ;
+  
 
   const tableHtml = `
     <table style="width: 100%;">
@@ -44,10 +46,6 @@ async function sendPaymentScheduleEmail({ payscdlamount,
       <tr>
         <td style="border: 1px solid;">Your Profile Level</td>
         <td style="border: 1px solid;">${payscdlinflulevel}</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid;">Account Holder Name</td>
-        <td style="border: 1px solid;">${payscdlinfluname}</td>
       </tr>
       <tr>
         <td style="border: 1px solid;">Campaign ID</td>
@@ -80,10 +78,6 @@ async function sendPaymentScheduleEmail({ payscdlamount,
     <table style="width: 100%;">
       <tr>
         <th colspan="2" style="border: 1px solid;">Your next step is to confirm your bank details.</th>
-      </tr>
-      <tr>
-        <td style="border: 1px solid;">Account Holder Name</td>
-        <td style="border: 1px solid;">${payscdlaccholder}</td>
       </tr>
       <tr>
         <td style="border: 1px solid;">Bank Name</td>
