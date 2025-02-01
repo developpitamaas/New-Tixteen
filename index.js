@@ -16,6 +16,7 @@ const campaignRoutes = require('./src/routes/campaignRoutes.js');
 const Managment = require('./src/routes/Managmentroutes.js');
 const Admin = require('./src/routes/admin.js');
 const Staff = require('./src/routes/stafRoute.js'); 
+const Client = require('./src/routes/client.js');
 
 
 // influencer routes
@@ -87,7 +88,7 @@ app.use('/v1', influencerRoutes.getAllInfluencersFilter);
 app.use('/v1', Managment,Staff);
 
 // influencer
-app.use('/api', Auth,Influ,SocialMedia,Bank,InfluencerBank,Deliverable);
+app.use('/api', Auth,Influ,SocialMedia,Bank,InfluencerBank,Deliverable,Client);
  
 // admin
 app.use('/v1/admin/api', Admin);
