@@ -31,7 +31,7 @@ const sendbrandmail = async (req, res) => {
         await Mail(email, "Thank You for Contacting Us!", clientMessage);
 
         // Send email to admin
-        await Mail("contactme@tixteen.com", "New Brand Form Submission", adminMessage);
+        await Mail("work@tixteen.com", "New Brand Form Submission", adminMessage);
 
         res.status(200).json({ message: "Form submitted successfully!" });
     } catch (error) {
